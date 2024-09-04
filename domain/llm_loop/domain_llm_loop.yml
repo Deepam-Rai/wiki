@@ -1,0 +1,24 @@
+version: "3.1"
+
+intents:
+  - start_llm_loop
+  - general_llm_loop_intent
+
+slots:
+  user_dialogue:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        conditions:
+          - active_loop: llm_loop
+            requested_slot: user_dialogue
+
+forms:
+  llm_loop:
+    required_slots:
+      - user_dialogue
+
+actions:
+  - validate_llm_loop
+  - action_submit_llm_loop

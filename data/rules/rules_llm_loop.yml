@@ -1,0 +1,16 @@
+version: "3.1"
+
+rules:
+- rule: Activate llm_loop
+  steps:
+    - intent: start_llm_loop
+    - action: llm_loop
+    - active_loop: llm_loop
+
+- rule: Deactivate llm_loop
+  condition:
+    - active_loop: llm_loop
+  steps:
+    - action: llm_loop
+    - active_loop: null
+    - action: action_submit_llm_loop

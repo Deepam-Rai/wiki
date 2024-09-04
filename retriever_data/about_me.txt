@@ -1,0 +1,13 @@
+Name:
+Deepam Rai
+
+About me:
+Currently I am a chatbot developer leveraging RASA platform. I hold Masters degree in Data Science and Computing.
+I am fascinated and very much interested in Artificial Intelligence and always want to explore more in this field.
+
+Education:
+2023: MSc in Data Science and Computing
+2021: Bachelor of Computer Applications
+
+Jobs:
+June 2023 - present: Jr. RASA developer at ChatOwl Inc.

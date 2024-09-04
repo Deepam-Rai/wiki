@@ -1,0 +1,30 @@
+services:
+  core-server:
+    image: wiki:latest
+    build: .
+    container_name: wiki-core
+    ports:
+      - "5006:5006"
+    volumes:
+      - ./:/app
+    command: bash -c "rasa run --enable-api --cors \"*\" --debug --model models/wiki_model.tar.gz --port \"5006\""
+    networks:
+    - all
+
+  action-server:
+    image: wiki:latest
+    build: .
+    container_name: wiki-action
+    volumes:
+      - ./actions:/app/actions
+    command: bash -c "rasa run actions --port \"5056\" --debug"
+    ports:
+      - "5056:5056"
+    networks:
+    - all
+
+networks:
+  all:
+    driver: bridge
+    driver_opts:
+      com.docker.network.enable_ipv6: "true"

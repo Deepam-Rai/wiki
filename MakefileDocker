@@ -1,0 +1,29 @@
+train:
+	docker compose run --rm core-server rasa train --domain domain --config config.yml --fixed-model-name wiki_model --debug
+
+run:
+	docker-compose up -d
+
+stop:
+	docker-compose down
+
+core-logs:
+	docker compose logs core-server -f
+
+action-logs:
+	docker compose logs action-server -f
+
+restart-core:
+	docker compose restart core-server
+
+restart-action:
+	docker compose restart action-server
+
+train-redeploy-logs:
+	make -f MakefileDocker train
+	make -f MakefileDocker stop
+	make -f MakefileDocker run
+	make -f MakefileDocker core-logs
+
+build:
+	docker compose build

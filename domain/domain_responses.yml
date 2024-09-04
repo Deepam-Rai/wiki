@@ -1,0 +1,25 @@
+version: "3.1"
+
+responses:
+  utter_greet:
+  - text: "Hello! How can I assist you with information about {person_name} today?"
+  - text: "Hello! How can I assist you today? What would you like to know about {person_name}?"
+  - text: "Hello! How can I assist you today? Are you looking for information about {person_name}?"
+  - text: "Hello! How can I help you today? What would you like to know about {person_name}?"
+  - text: "Hello! How can I assist you today with information about {person_name}?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
